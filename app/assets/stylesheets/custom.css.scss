@@ -1,2 +1,48 @@
+$navbar-default-bg: rgb(40, 140, 86);
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo{
+  float: left;
+  font-size: 1.7em;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#logo:hover{
+  text-decoration: none;
+}
+.center{
+  text-align: center;
+}
+body { padding-top: 70px; }
+
+.jumbotron{
+  background-image: asset-url('atleta.jpg');
+  background-size: cover;
+  height: 550px;
+}
+.jumbotron h1{
+
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+}
+.btn-xlarge{
+  background: none;
+  border-color: black;
+  border-width: 1px;
+  color: #0f1624;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.btn-xlarge:hover{
+  transform: scale(1.1);
+  background: none;
+  border-color: black;
+  border-width: 1px;
+  color: #0f1624;
+  font-weight: bold;
+  font-size: 1.5em;
+}
