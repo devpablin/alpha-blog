@@ -21,7 +21,7 @@ $navbar-default-bg: rgb(40, 140, 86);
 body { padding-top: 70px; }
 
 .jumbotron{
-  background-image: asset-url('atleta.jpg');
+  background-image: asset-url('atleta-compressor.jpg');
   background-size: cover;
   height: 550px;
 }
@@ -76,10 +76,8 @@ footer {
   background: #252424;
   color: white;
   padding: 40px 0;
-  position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: -1;
   }
   footer .footer-stuff {
     max-width: 750px;
@@ -160,16 +158,30 @@ input[type="button"].button-primary:focus {
 
 
 .con-pie{
-  margin-bottom: 230px;
   background-color: white;
 }
 .letra{
 	font-family: 'Slackey', cursive;
 }
-.grande{
-	font-size: 7em;
-}
-p.bienvenido{
+
+.bienvenido{
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.5em;
+
+}
+#info1{
+  background-color: rgb(55, 190, 97);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+}
+.info2{
+  padding: 15px;
+  border-right: 2px solid rgb(38, 40, 39);
+}
+#info12{
+  background-color: rgb(44, 195, 242);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+}
+.arriba{
+  margin-top: 5%;
 }
