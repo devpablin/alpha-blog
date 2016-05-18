@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:edit, :update, :show, :destroy]
+  before_action :set_article, only: [:edit, :update, :show, :destroy, :upvote, :downvote]
   before_action :require_user, except: [:index, :show]
   before_action :require_same_user, only: [:edit, :update, :destroy]
   def new
@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles=Article.paginate(page: params[:page], per_page: 5)
+    @articles=Article.paginate(page: params[:page], per_page: 5).order(:cached_votes_score => :desc)
   end
 
   def edit
@@ -47,6 +47,15 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def upvote
+    @article.upvote_from current_user
+    redirect_to article_path(@article)
+  end
+
+  def downvote
+    @article.downvote_from current_user
+    redirect_to article_path(@article)
+  end
   private
     def set_article
       @article= Article.find(params[:id])

@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'normalize-rails', '~> 4.1', '>= 4.1.1'
 gem 'will_paginate', '3.0.7'
@@ -41,6 +42,7 @@ group :development, :test do
   gem 'byebug'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'rails_admin'
 end
 
 group :development do

@@ -78,6 +78,13 @@ body { padding-top: 70px; }
   letter-spacing: -1px;
   font-weight: bold;
 }
+.badge.votes{
+  color: black;
+  background-color: #d7d5d6;
+}
+.like{
+  text-decoration: none;
+}
 .input_checkbox input{
   width: auto !important;
 }

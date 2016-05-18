@@ -21,8 +21,31 @@
   <%= simple_format(@article.description) %>
   <% if @article.categories.any? %>
     <p>
-      Categories: <%= render @article.categories %>
+      Categorias: <%= render @article.categories %>
     </p>
+  <% end %>
+  <% if logged_in? %>
+    <div align = "center" class="row">
+      <%= link_to like_article_path(@article), class: "like", method: :put do %>
+        <button class="btn btn-default">
+          <span class= "glyphicon glyphicon-thumbs-up glyphicon-align-center"></span>
+          <span class="badge"><%=@article.get_upvotes.size%></span>
+        </button>
+      <% end %>
+      <%= link_to unlike_article_path(@article), class: "like", method: :put do %>
+        <button class="btn btn-default">
+          <span class= "glyphicon glyphicon-thumbs-down glyphicon-align-center"></span>
+          <span class="badge"><%=@article.get_downvotes.size%></span>
+        </button>
+      <% end %>
+    </div>
+  <% else %>
+  <div align = "center" class="row">
+    <span class= "glyphicon glyphicon-thumbs-up glyphicon-align-center"></span>
+    <span class="badge votes"><%=@article.get_upvotes.size%></span>
+    <span class= "glyphicon glyphicon-thumbs-down glyphicon-align-center"></span>
+    <span class="badge votes"><%=@article.get_downvotes.size%></span>
+  </div>
   <% end %>
   <div class="article-actions">
     <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
