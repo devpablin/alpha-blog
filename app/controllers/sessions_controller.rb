@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       flash[:success] = "Ingresaste correctamente"
       redirect_to user_path(user)
     else
-      flash.now[:danger] = "Ingresaste algun dato incorrecto en tu informacion de inicio de sesion putito :V"
+      flash.now[:danger] = "Ingresaste algun dato incorrecto en tu informacion de inicio de sesion"
       render 'new'
     end
   end
